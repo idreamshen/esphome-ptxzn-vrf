@@ -5,9 +5,16 @@
 
 # Esphome 配置
 ```yaml
+esphome:
+  name: ptxzn-vrf
+  friendly_name: ptxzn-vrf
+  includes:
+    - esphome-ptxzn-vrf/ptxzn_vrf.h 
+    # 在 esphome 文件夹中创建 esphome-ptxzn-vrf，并复制 ptxzn_vrf.h 到该目录
+
 logger:
-  baud_rate: 0
-  
+  baud_rate: 0 # 关闭串口日志
+
 uart:
   - id: vrf_uart
     tx_pin: 1
@@ -16,6 +23,7 @@ uart:
 
 climate:
 - platform: custom
+  # new PtxznVrfComponent(id(vrf_uart), 4) 中的 4 代表 N 台内机
   lambda: |-
     auto vrfComponent = new PtxznVrfComponent(id(vrf_uart), 4);
     App.register_component(vrfComponent);
