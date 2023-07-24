@@ -1,9 +1,13 @@
-# 硬件改造
+# 图文教程
+[中央空调网关 PTXZN VRF 改造刷入 esphome 固件](https://bbs.hassbian.com/thread-22165-1-1.html)
+
+# 主要步骤
+## 硬件改造
 1. 拆除原先 VRF 板载 ESP32 模组
 1. 为 TX/RX 焊接接线端子，并将线引出
 1. 使用外置电源（确保和 VRF 电源共地）给 ESP8266/ESP32 上电，并将上述的 TX/RX 与 ESP8266/ESP32 的 RX/TX 相连
 
-# Esphome 配置
+## Esphome 配置
 ```yaml
 esphome:
   name: ptxzn-vrf
@@ -45,6 +49,3 @@ climate:
     - name: "AirCondition canting"
     - name: "AirCondition ciwo"
 ```
-
-# 图文教程
-[中央空调网关 PTXZN VRF 改造刷入 esphome 固件](https://bbs.hassbian.com/thread-22165-1-1.html)
