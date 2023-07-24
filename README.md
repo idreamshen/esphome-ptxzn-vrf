@@ -9,8 +9,9 @@ esphome:
   name: ptxzn-vrf
   friendly_name: ptxzn-vrf
   includes:
+    # 在 esphome 文件夹中新建 esphome-ptxzn-vrf 目录，并复制 ptxzn_vrf.h 到该目录
     - esphome-ptxzn-vrf/ptxzn_vrf.h 
-    # 在 esphome 文件夹中创建 esphome-ptxzn-vrf，并复制 ptxzn_vrf.h 到该目录
+    
 
 logger:
   baud_rate: 0 # 关闭串口日志
