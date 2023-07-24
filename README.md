@@ -45,3 +45,6 @@ climate:
     - name: "AirCondition canting"
     - name: "AirCondition ciwo"
 ```
+
+# 图文教程
+[中央空调网关 PTXZN VRF 改造刷入 esphome 固件](https://bbs.hassbian.com/thread-22165-1-1.html)
