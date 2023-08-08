@@ -1,0 +1,56 @@
+esphome:
+  name: ptxzn-vrf
+  friendly_name: ptxzn-vrf
+  includes:
+    - esphome-ptxzn-vrf/ptxzn_vrf.h
+
+# Enable logging
+logger:
+  baud_rate: 0
+  
+# Enable Home Assistant API
+api:
+  encryption:
+    key: "YIzrKHlei/qBAGcoFWgVGf2rSeoNh3xeZamfg63dc8U="
+
+ota:
+  password: "4bd1e1ed23c698aa39b3e4ee92ae9e81"
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Ptxzn-Vrf Fallback Hotspot"
+    password: "kwvwcKzIBsQU"
+
+captive_portal:
+
+uart:
+  - id: vrf_uart
+    tx_pin: 1
+    rx_pin: 3
+    baud_rate: 9600
+
+climate:
+- platform: custom
+  lambda: |-
+    auto vrfComponent = new PtxznVrfComponent(id(vrf_uart), 4);
+    App.register_component(vrfComponent);
+    App.register_component(vrfComponent->ptxznVrfClimateComponents[0]);
+    App.register_component(vrfComponent->ptxznVrfClimateComponents[1]);
+    App.register_component(vrfComponent->ptxznVrfClimateComponents[2]);
+    App.register_component(vrfComponent->ptxznVrfClimateComponents[3]);
+    return {
+      vrfComponent->ptxznVrfClimateComponents[0],
+      vrfComponent->ptxznVrfClimateComponents[1],
+      vrfComponent->ptxznVrfClimateComponents[2],
+      vrfComponent->ptxznVrfClimateComponents[3],
+    };
+
+  climates:
+    - name: "AirCondition keting"
+    - name: "AirCondition zhuwo"
+    - name: "AirCondition canting"
+    - name: "AirCondition ciwo"
