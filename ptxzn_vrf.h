@@ -81,6 +81,8 @@ class PtxznVrfClimateComponent : public Component, public Climate {
       data[CMD_IDX_FAN_MODE] = CMD_FAN_MODE_MEDIUM;
     } else if (this->fan_mode == climate::CLIMATE_FAN_LOW) {
       data[CMD_IDX_FAN_MODE] = CMD_FAN_MODE_LOW;
+    } else if (this->fan_mode == climate::CLIMATE_FAN_AUTO) {
+      data[CMD_IDX_FAN_MODE] = CMD_FAN_MODE_AUTO;
     }
 
     data[CMD_IDX_TARGET_TEMP] = this->target_temperature;
