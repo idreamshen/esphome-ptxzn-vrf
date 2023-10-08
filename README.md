@@ -1,3 +1,7 @@
+### 本仓库已废弃，请使用 [esphome-ptxzn-vrf](https://github.com/idreamshen/esphome-ptxzn-vrf)
+
+----
+
 # 图文教程
 [中央空调网关 PTXZN VRF 改造刷入 esphome 固件](https://bbs.hassbian.com/thread-22165-1-1.html)
 
