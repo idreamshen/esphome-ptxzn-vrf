@@ -1,4 +1,4 @@
-### 本仓库已废弃，请使用 [esphome-ptxzn-vrf](https://github.com/idreamshen/esphome-ptxzn-vrf)
+### 本仓库已废弃，请使用 [esphome-demry-vrf](https://github.com/idreamshen/esphome-demry-vrf)
 
 ----
 
